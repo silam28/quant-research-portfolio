@@ -2,7 +2,7 @@
 
 **Author:** Silam Shrestha · [LinkedIn](https://www.linkedin.com/in/silam-shrestha-a25701394)
 
-Five Python projects on systematic trading, risk and pricing, tested on Japanese market data where data is used. Each notebook explains the idea, the maths, the code, the results and the limitations. Results are reported honestly, including negative ones.
+Six Python projects on systematic trading, risk and pricing, tested on Japanese market data where data is used. Each notebook explains the idea, the maths, the code, the results and the limitations. Results are reported honestly, including negative ones.
 
 | # | Project | What it shows | Notebook |
 |---|---|---|---|
@@ -11,6 +11,7 @@ Five Python projects on systematic trading, risk and pricing, tested on Japanese
 | 3 | Pairs Trading with Cointegration | Engle-Granger test, hedge ratios, z-score signals, out-of-sample trading | `03_Pairs_Trading.ipynb` |
 | 4 | Black-Scholes Options Pricing | Pricing from first principles, Greeks, Monte Carlo and finite-difference checks, implied volatility | `04_Options_Pricing_Black_Scholes.ipynb` |
 | 5 | Market-Making Simulator | Bid-ask quoting, random order arrival, inventory risk and skewing | `05_Market_Making_Simulator.ipynb` |
+| 6 | ML Return Prediction with SQL | SQL window-function features, Ridge and Gradient Boosting, walk-forward validation, Information Coefficient, long-short portfolio | `06_ML_Return_Prediction_SQL.ipynb` |
 
 ## Key findings (real Japanese market data)
 | Project | Result |
@@ -20,6 +21,7 @@ Five Python projects on systematic trading, risk and pricing, tested on Japanese
 | Pairs Trading | No same-industry pair was cointegrated at 5% in 2015–2019; out-of-sample results were small and mostly negative. Fixed a stop-loss re-entry bug that had inflated losses. |
 | Black-Scholes | Prices and Greeks confirmed by put-call parity, Monte Carlo (8.4351 vs 8.4333) and finite differences. |
 | Market Making | A small inventory skew cut PnL volatility by about 83% with similar average profit. |
+| ML Return Prediction (SQL) | Walk-forward 2016–2025: no model reached a reliable edge. Ridge (IC 0.024) mostly learned reversal; Gradient Boosting overfit (IC −0.022, Sharpe −0.74). Simple models were safer on small, noisy data. |
 
 ## Principles used throughout
 - **No look-ahead bias:** every decision uses only information available at that time.
@@ -31,4 +33,4 @@ Five Python projects on systematic trading, risk and pricing, tested on Japanese
 Open any notebook in Google Colab and choose Runtime → Run all.
 
 ## Tools
-Python · pandas · NumPy · SciPy · statsmodels · Matplotlib · yfinance
+Python · SQL (SQLite) · pandas · NumPy · SciPy · statsmodels · scikit-learn · Matplotlib · yfinance
